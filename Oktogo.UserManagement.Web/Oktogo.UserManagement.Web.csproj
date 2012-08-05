@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Validation\EmailAddress.cs" />
     <Compile Include="ViewModels\PagerData.cs" />
     <Compile Include="ViewModels\UsersListViewModel.cs" />
   </ItemGroup>
@@ -158,7 +159,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\UserManagementService\UserManagementService.disco" />
+    <None Include="Service References\UserManagementService\UserManagementService1.disco" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -178,17 +179,17 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <None Include="Service References\UserManagementService\UserManagementService.wsdl" />
-    <None Include="Service References\UserManagementService\UserManagementService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserManagementService\UserManagementService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\UserManagementService\UserManagementService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\User\Index.cshtml" />
+    <None Include="Service References\UserManagementService\UserManagementService1.wsdl" />
+    <None Include="Service References\UserManagementService\UserManagementService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagementService\UserManagementService31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserManagementService\UserManagementService32.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Views\Shared\UserDetails.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
   </ItemGroup>

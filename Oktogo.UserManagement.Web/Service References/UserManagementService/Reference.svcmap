@@ -18,14 +18,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://wcf.local/UserManagementService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://igorblinnikov.com/UserManagementService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserManagementService2.xsd" MetadataType="Schema" ID="2be2f013-a3fd-48ce-9a01-bf083eff6b61" SourceId="1" SourceUrl="http://wcf.local/UserManagementService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserManagementService.wsdl" MetadataType="Wsdl" ID="837e5408-4f77-4d87-9950-f1af34a1536f" SourceId="1" SourceUrl="http://wcf.local/UserManagementService.svc?wsdl" />
-    <MetadataFile FileName="UserManagementService.xsd" MetadataType="Schema" ID="9432e8c4-bc3d-4f2e-9ccd-b2c9d8936286" SourceId="1" SourceUrl="http://wcf.local/UserManagementService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UserManagementService.disco" MetadataType="Disco" ID="1e3557b8-d3d5-4960-9d24-2996b46483d7" SourceId="1" SourceUrl="http://wcf.local/UserManagementService.svc?disco" />
-    <MetadataFile FileName="UserManagementService1.xsd" MetadataType="Schema" ID="a09631fb-8ec2-4b95-9aa8-82fbb3752e1b" SourceId="1" SourceUrl="http://wcf.local/UserManagementService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserManagementService1.disco" MetadataType="Disco" ID="9b44431f-eb03-4b74-a50c-19f8ed9e6bb1" SourceId="1" SourceUrl="http://igorblinnikov.com/UserManagementService.svc?disco" />
+    <MetadataFile FileName="UserManagementService3.xsd" MetadataType="Schema" ID="7aee18bd-f4c1-49a6-b628-2a9ab6d0ad33" SourceId="1" SourceUrl="http://igorblinnikov.com/UserManagementService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserManagementService1.wsdl" MetadataType="Wsdl" ID="5f9a0978-4b03-409e-a3ee-c0504255b4da" SourceId="1" SourceUrl="http://igorblinnikov.com/UserManagementService.svc?wsdl" />
+    <MetadataFile FileName="UserManagementService31.xsd" MetadataType="Schema" ID="9bdc6770-11aa-48c9-a91a-a7adfb92635d" SourceId="1" SourceUrl="http://igorblinnikov.com/UserManagementService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserManagementService32.xsd" MetadataType="Schema" ID="71f05fde-7bd2-415a-a622-e312e3afad2d" SourceId="1" SourceUrl="http://igorblinnikov.com/UserManagementService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

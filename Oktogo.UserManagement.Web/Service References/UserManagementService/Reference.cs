@@ -10,6 +10,8 @@
 
 using System.ComponentModel.DataAnnotations;
 
+using Oktogo.UserManagement.Web.Validation;
+
 namespace Oktogo.UserManagement.Web.UserManagementService {
     using System.Runtime.Serialization;
     using System;
@@ -49,7 +51,7 @@ namespace Oktogo.UserManagement.Web.UserManagementService {
         [System.Runtime.Serialization.DataMemberAttribute()]
         [Display(Name = "E-mail")]
         [Required]
-        [DataType(DataType.EmailAddress)]
+        [EmailAddress]
         public string Email {
             get {
                 return this.EmailField;

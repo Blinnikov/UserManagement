@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="pcJIIjx53+WVJA0vpBeymDfAqIo=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="DBYfojocSnXjDFFAW92B/pE9Efg=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IUserManagementService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IUserManagementService" contract="UserManagementService.IUserManagementService" bindingType="basicHttpBinding" address="http://wcf.local/UserManagementService.svc" bindingConfiguration="BasicHttpBinding_IUserManagementService">
+    <endpoint name="BasicHttpBinding_IUserManagementService" contract="UserManagementService.IUserManagementService" bindingType="basicHttpBinding" address="http://igorblinnikov.com/UserManagementService.svc" bindingConfiguration="BasicHttpBinding_IUserManagementService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://wcf.local/UserManagementService.svc</serializedValue>
+          <serializedValue>http://igorblinnikov.com/UserManagementService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
