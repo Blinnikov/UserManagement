@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oktogo.UserManagement.Web", "Oktogo.UserManagement.Web\Oktogo.UserManagement.Web.csproj", "{7A15FEFF-0DBE-49EF-924D-8752A1FDAA08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oktogo.UserManagement.Services", "Oktogo.UserManagement.Services\Oktogo.UserManagement.Services.csproj", "{B9C998C9-9567-4EC2-8861-BB9AE70DE88C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oktogo.UserManagement.Entities", "Oktogo.UserManagement.Entities\Oktogo.UserManagement.Entities.csproj", "{8F6FC7D9-AF9A-4AD7-8729-D34C63EB0A7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oktogo.UserManagement.DataAccess", "Oktogo.UserManagement.DataAccess\Oktogo.UserManagement.DataAccess.csproj", "{4BB9E29F-D078-4B5F-AC1D-B1EF95C11F7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OktogoUserManagement.Tests", "OktogoUserManagement.Tests\OktogoUserManagement.Tests.csproj", "{51D81318-9FDE-453E-B56A-0FE8BD27EC58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A15FEFF-0DBE-49EF-924D-8752A1FDAA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A15FEFF-0DBE-49EF-924D-8752A1FDAA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A15FEFF-0DBE-49EF-924D-8752A1FDAA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A15FEFF-0DBE-49EF-924D-8752A1FDAA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C998C9-9567-4EC2-8861-BB9AE70DE88C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C998C9-9567-4EC2-8861-BB9AE70DE88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C998C9-9567-4EC2-8861-BB9AE70DE88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C998C9-9567-4EC2-8861-BB9AE70DE88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F6FC7D9-AF9A-4AD7-8729-D34C63EB0A7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6FC7D9-AF9A-4AD7-8729-D34C63EB0A7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6FC7D9-AF9A-4AD7-8729-D34C63EB0A7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6FC7D9-AF9A-4AD7-8729-D34C63EB0A7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB9E29F-D078-4B5F-AC1D-B1EF95C11F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB9E29F-D078-4B5F-AC1D-B1EF95C11F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB9E29F-D078-4B5F-AC1D-B1EF95C11F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB9E29F-D078-4B5F-AC1D-B1EF95C11F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51D81318-9FDE-453E-B56A-0FE8BD27EC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51D81318-9FDE-453E-B56A-0FE8BD27EC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51D81318-9FDE-453E-B56A-0FE8BD27EC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51D81318-9FDE-453E-B56A-0FE8BD27EC58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

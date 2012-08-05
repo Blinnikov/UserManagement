@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "About Oktogo.ru";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+        Oktogo.ru, the leading Russian online hotel booking and travel company. With over 2,500 hotels in Russia in its database and 140,000 hotels world wide, Oktogo.ru boasts the largest and most relevant hotel offering for both Russian and foreign travelers in the country. The company is the market leader in the booming Russian online travel market.
+    </p>
+
+    <p>
+        The Company was funded by leading European funds, Mangrove Capital Partners and Ventech Capital and angel investors, including Javier Perez-Tenessa, founder and CEO of Odigeo, Fabrice Grinda, founder of OLX, and Jose Marin, founder of IG Expansion.
+    </p>
+</article>
+
+<aside>
+    <h3>Oktogo news</h3>
+    <p>
+         The Top 10 Russian Internet Entrepreneurs You Need to Know About June 15, 2012<br/>
+         Top 25 Hottest Russian Start-ups May 29, 2012 
+    </p>
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "User")</li>
+        <li>@Html.ActionLink("About", "About", "User")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "User")</li>
+    </ul>
+</aside>

@@ -1,0 +1,44 @@
+﻿@model Oktogo.UserManagement.Web.UserManagementService.User[]
+
+@{
+    ViewBag.Title = "All existing users";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+            <p>
+                This page shows all existing in the system users. You can add the new one, change details of existing user or delete somebody.
+            </p>
+        </div>
+    </section>
+}
+
+<h2>Index</h2>
+
+@if(TempData["Success"] != null)
+{
+    <p>@TempData["Success"]</p>
+}
+
+<p>
+    @Html.ActionLink("Add New", "Add")
+</p>
+<table>
+    <tr>
+        <th>
+            Full name
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    Html.RenderPartial("UserDetails", item);
+}
+
+</table>
