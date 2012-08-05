@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 
 using Oktogo.UserManagement.Web.UserManagementService;
+using Oktogo.UserManagement.Web.ViewModels;
 
 namespace Oktogo.UserManagement.Web.Controllers
 {
@@ -20,7 +21,17 @@ namespace Oktogo.UserManagement.Web.Controllers
 
         public ViewResult Index(int pageNumber = 1, int pageSize = PageSize)
         {
-            return View(UserManagementService.GetUsers(pageNumber, pageSize));
+            var viewModel = new UsersListViewModel
+            {
+                Users = UserManagementService.GetUsers(pageNumber, pageSize),
+                PagerData = new PagerData
+                {
+                    PageNumber = pageNumber,
+                    PageSize = pageSize,
+                    UsersCount = UserManagementService.GetUsersCount()
+                }
+            };
+            return View(viewModel);
         }
 
         public ActionResult Add()

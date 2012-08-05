@@ -8,6 +8,8 @@ namespace Oktogo.UserManagement.DataAccess
     {
         User GetUser(int id);
 
+        int GetUsersCount();
+
         User[] GetUsers(int pageNumber, int pageSize);
 
         void SaveUser(User user);

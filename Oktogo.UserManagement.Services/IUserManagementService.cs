@@ -13,6 +13,9 @@ namespace Oktogo.UserManagement.Services
         User GetUser(int id);
 
         [OperationContract]
+        int GetUsersCount();
+
+        [OperationContract]
         User[] GetUsers(int pageNumber, int pageSize);
 
         [OperationContract]

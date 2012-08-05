@@ -1,4 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Globalization;
+using System.Text;
+using System.Web.Mvc;
+
+using Oktogo.UserManagement.Web.ViewModels;
 
 namespace Oktogo.UserManagement.Web.Extensions
 {
@@ -21,6 +26,24 @@ namespace Oktogo.UserManagement.Web.Extensions
             string anchorHtml = anchorBuilder.ToString(TagRenderMode.Normal);
 
             return MvcHtmlString.Create(anchorHtml);
+        }
+
+        public static MvcHtmlString PageLinks(this HtmlHelper html, PagerData pagerData, Func<int, string> pageUrl)
+        {
+            var result = new StringBuilder();
+            for (int i = 1; i <= pagerData.PagesCount; i++)
+            {
+                var tag = new TagBuilder("a");
+                tag.MergeAttribute("href", pageUrl(i));
+                tag.InnerHtml = i.ToString(CultureInfo.InvariantCulture);
+                if (i == pagerData.PageNumber)
+                {
+                    tag.AddCssClass("selected");
+                }
+                result.Append(tag);
+            }
+
+            return MvcHtmlString.Create(result.ToString());
         }
     }
 }

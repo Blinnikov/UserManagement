@@ -8,6 +8,7 @@ using NUnit.Framework;
 
 using Oktogo.UserManagement.Web.Controllers;
 using Oktogo.UserManagement.Web.UserManagementService;
+using Oktogo.UserManagement.Web.ViewModels;
 
 namespace OktogoUserManagement.Tests
 {
@@ -30,6 +31,7 @@ namespace OktogoUserManagement.Tests
                 new User { Id = 6, FirstName = "John", LastName = "Quincy Adams", Email = "john.quincy.adams@whitehouse.gov" }
             };
 
+            mock.Setup(m => m.GetUsersCount()).Returns(users.Length);
             mock.Setup(m => m.GetUsers(It.IsAny<int>(), It.IsAny<int>()))
                 .Returns((int pageNumber, int pageSize) => users.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToArray());
             mock.Setup(m => m.GetUser(It.IsAny<int>())).Returns((int i) => users.FirstOrDefault(u => u.Id == i));
@@ -41,7 +43,7 @@ namespace OktogoUserManagement.Tests
         {
             var controller = new UserController(mock.Object);
 
-            var usersResult = (User[])controller.Index().ViewData.Model;
+            var usersResult = ((UsersListViewModel)controller.Index().ViewData.Model).Users;
 
             Assert.AreEqual(5, usersResult.Length);
             Assert.AreEqual("George", usersResult[0].FirstName);
@@ -55,11 +57,25 @@ namespace OktogoUserManagement.Tests
         public void IndexAction_WhenInvoking_CanPaginate()
         {
             var controller = new UserController(mock.Object);
-            var result = (User[])controller.Index(2, 3).Model;
+            var result = ((UsersListViewModel)controller.Index(2, 3).Model).Users;
             Assert.IsTrue(result.Length == 3);
-            Assert.AreEqual(result[0].LastName, "Madison");
-            Assert.AreEqual(result[1].LastName, "Monroe");
-            Assert.AreEqual(result[2].LastName, "Quincy Adams");
+            Assert.AreEqual("Madison", result[0].LastName);
+            Assert.AreEqual("Monroe", result[1].LastName);
+            Assert.AreEqual("Quincy Adams", result[2].LastName);
+        }
+
+        [Test]
+        public void IndexAction_WhenInvoking_ReturnViewModel()
+        {
+            var controller = new UserController(mock.Object);
+
+            var viewModel = (UsersListViewModel)controller.Index(2, 2).Model;
+
+            var pagerData = viewModel.PagerData;
+            Assert.AreEqual(2, pagerData.PageNumber);
+            Assert.AreEqual(2, pagerData.PageSize);
+            Assert.AreEqual(6, pagerData.UsersCount);
+            Assert.AreEqual(3, pagerData.PagesCount);
         }
 
         [Test]

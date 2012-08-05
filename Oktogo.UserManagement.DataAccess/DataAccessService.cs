@@ -15,6 +15,14 @@ namespace Oktogo.UserManagement.DataAccess
             }
         }
 
+        public int GetUsersCount()
+        {
+            using (var db = new UserDbContext())
+            {
+                return db.Users.Count();
+            }
+        }
+
         public User[] GetUsers(int pageNumber, int pageSize)
         {
             using (var db = new UserDbContext())

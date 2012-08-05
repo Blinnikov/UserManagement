@@ -1,5 +1,5 @@
-﻿@model Oktogo.UserManagement.Web.UserManagementService.User[]
-
+﻿@using Oktogo.UserManagement.Web.Extensions
+@model Oktogo.UserManagement.Web.ViewModels.UsersListViewModel
 @{
     ViewBag.Title = "All existing users";
 }
@@ -37,8 +37,10 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    Html.RenderPartial("UserDetails", item);
-}
-
+    @foreach (var item in Model.Users) {
+        Html.RenderPartial("UserDetails", item);
+    }
 </table>
+<div class="pager">
+    @Html.PageLinks(Model.PagerData, u => Url.Action("Index", new { pageNumber = u }))
+</div>
