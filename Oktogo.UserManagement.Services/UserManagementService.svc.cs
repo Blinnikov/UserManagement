@@ -24,9 +24,9 @@ namespace Oktogo.UserManagement.Services
             return DataAccessService.GetUser(id);
         }
 
-        public User[]  GetUsers()
+        public User[]  GetUsers(int pageNumber, int pageSize)
         {
-            return DataAccessService.GetUsers();
+            return DataAccessService.GetUsers(pageNumber, pageSize);
         }
 
         public void SaveUser(User user)

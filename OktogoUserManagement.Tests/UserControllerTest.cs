@@ -29,25 +29,37 @@ namespace OktogoUserManagement.Tests
                 new User { Id = 5, FirstName = "James", LastName = "Monroe", Email = "james.monroe@whitehouse.gov" },
                 new User { Id = 6, FirstName = "John", LastName = "Quincy Adams", Email = "john.quincy.adams@whitehouse.gov" }
             };
-            mock.Setup(m => m.GetUsers()).Returns(users);
+
+            mock.Setup(m => m.GetUsers(It.IsAny<int>(), It.IsAny<int>()))
+                .Returns((int pageNumber, int pageSize) => users.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToArray());
             mock.Setup(m => m.GetUser(It.IsAny<int>())).Returns((int i) => users.FirstOrDefault(u => u.Id == i));
             mock.Setup(m => m.DeleteUser(It.IsAny<int>())).Returns((int i) => users.Any(u => u.Id != i));
         }
 
         [Test]
-        public void IndexAction_WhenInvoking_ReturnsAllUsers()
+        public void IndexAction_WhenInvoking_ReturnsFirstPageOfUsers()
         {
             var controller = new UserController(mock.Object);
 
             var usersResult = (User[])controller.Index().ViewData.Model;
 
-            Assert.AreEqual(6, usersResult.Length);
+            Assert.AreEqual(5, usersResult.Length);
             Assert.AreEqual("George", usersResult[0].FirstName);
             Assert.AreEqual("John", usersResult[1].FirstName);
             Assert.AreEqual("Thomas", usersResult[2].FirstName);
             Assert.AreEqual("James", usersResult[3].FirstName);
             Assert.AreEqual("James", usersResult[4].FirstName);
-            Assert.AreEqual("John", usersResult[5].FirstName);
+        }
+
+        [Test]
+        public void IndexAction_WhenInvoking_CanPaginate()
+        {
+            var controller = new UserController(mock.Object);
+            var result = (User[])controller.Index(2, 3).Model;
+            Assert.IsTrue(result.Length == 3);
+            Assert.AreEqual(result[0].LastName, "Madison");
+            Assert.AreEqual(result[1].LastName, "Monroe");
+            Assert.AreEqual(result[2].LastName, "Quincy Adams");
         }
 
         [Test]

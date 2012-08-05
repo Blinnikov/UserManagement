@@ -13,7 +13,7 @@ namespace Oktogo.UserManagement.Services
         User GetUser(int id);
 
         [OperationContract]
-        User[] GetUsers();
+        User[] GetUsers(int pageNumber, int pageSize);
 
         [OperationContract]
         void SaveUser(User user);

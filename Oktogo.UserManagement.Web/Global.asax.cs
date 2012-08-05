@@ -24,6 +24,12 @@ namespace Oktogo.UserManagement.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                null,
+                "page{pageNumber}",
+                new { controller = "User", action = "Index" }
+                );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "User", action = "Index", id = UrlParameter.Optional } // Parameter defaults

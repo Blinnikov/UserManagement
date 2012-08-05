@@ -9,6 +9,8 @@ namespace Oktogo.UserManagement.Web.Controllers
 {
     public class UserController : Controller
     {
+        public const int PageSize = 5;
+
         private IUserManagementService UserManagementService { get; set; }
 
         public UserController(IUserManagementService userManagementService)
@@ -16,9 +18,9 @@ namespace Oktogo.UserManagement.Web.Controllers
             UserManagementService = userManagementService;
         }
 
-        public ViewResult Index()
+        public ViewResult Index(int pageNumber = 1, int pageSize = PageSize)
         {
-            return View(UserManagementService.GetUsers());
+            return View(UserManagementService.GetUsers(pageNumber, pageSize));
         }
 
         public ActionResult Add()

@@ -15,11 +15,15 @@ namespace Oktogo.UserManagement.DataAccess
             }
         }
 
-        public User[] GetUsers()
+        public User[] GetUsers(int pageNumber, int pageSize)
         {
             using (var db = new UserDbContext())
             {
-                return db.Users.ToArray();
+                return db.Users
+                    .OrderBy(p => p.Id)
+                    .Skip((pageNumber - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToArray();
             }
         }
 
