@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost Language="C#" Debug="true"
+ Service="Oktogo.UserManagement.Services.IUserManagementService,Oktogo.UserManagement.Services"
+ Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory,Autofac.Integration.Wcf"  %>
