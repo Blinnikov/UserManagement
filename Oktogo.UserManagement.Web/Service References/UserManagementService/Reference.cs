@@ -124,8 +124,11 @@ namespace Oktogo.UserManagement.Web.UserManagementService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUser", ReplyAction="http://tempuri.org/IUserManagementService/GetUserResponse")]
         Oktogo.UserManagement.Web.UserManagementService.User GetUser(int id);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUsersCount", ReplyAction="http://tempuri.org/IUserManagementService/GetUsersCountResponse")]
+        int GetUsersCount();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/GetUsers", ReplyAction="http://tempuri.org/IUserManagementService/GetUsersResponse")]
-        Oktogo.UserManagement.Web.UserManagementService.User[] GetUsers();
+        Oktogo.UserManagement.Web.UserManagementService.User[] GetUsers(int pageNumber, int pageSize);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserManagementService/SaveUser", ReplyAction="http://tempuri.org/IUserManagementService/SaveUserResponse")]
         void SaveUser(Oktogo.UserManagement.Web.UserManagementService.User user);
@@ -165,8 +168,12 @@ namespace Oktogo.UserManagement.Web.UserManagementService {
             return base.Channel.GetUser(id);
         }
         
-        public Oktogo.UserManagement.Web.UserManagementService.User[] GetUsers() {
-            return base.Channel.GetUsers();
+        public int GetUsersCount() {
+            return base.Channel.GetUsersCount();
+        }
+        
+        public Oktogo.UserManagement.Web.UserManagementService.User[] GetUsers(int pageNumber, int pageSize) {
+            return base.Channel.GetUsers(pageNumber, pageSize);
         }
         
         public void SaveUser(Oktogo.UserManagement.Web.UserManagementService.User user) {
