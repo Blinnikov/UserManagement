@@ -1,3 +1,0 @@
-﻿<connectionStrings>
-  <add name="UserDbContext" connectionString="Data Source=;Initial Catalog=;Persist Security Info=;User ID=;Password=;MultipleActiveResultSets=True" providerName="System.Data.SqlClient"/>
-</connectionStrings>
