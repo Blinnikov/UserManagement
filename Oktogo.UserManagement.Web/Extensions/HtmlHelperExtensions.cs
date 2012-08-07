@@ -9,7 +9,7 @@ namespace Oktogo.UserManagement.Web.Extensions
 {
     public static class HtmlHelperExtensions
     {
-        public static MvcHtmlString ActionImage(this HtmlHelper html, string imagePath, string alt, string action, object routeValues)
+        public static MvcHtmlString RouteImage(this HtmlHelper html, string imagePath, string alt, string routeName, object routeValues)
         {
             var url = new UrlHelper(html.ViewContext.RequestContext);
 
@@ -21,7 +21,7 @@ namespace Oktogo.UserManagement.Web.Extensions
 
             // build the <a> tag
             var anchorBuilder = new TagBuilder("a");
-            anchorBuilder.MergeAttribute("href", url.Action(action, routeValues));
+            anchorBuilder.MergeAttribute("href", url.RouteUrl(routeName, routeValues));
             anchorBuilder.InnerHtml = imgHtml; // include the <img> tag inside
             string anchorHtml = anchorBuilder.ToString(TagRenderMode.Normal);
 

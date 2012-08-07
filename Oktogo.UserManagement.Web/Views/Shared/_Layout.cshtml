@@ -17,13 +17,13 @@
             <div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">
-                        @Html.ActionImage("~/Images/oktogo.gif", "Logo", "Index", null)
+                        @Html.RouteImage("~/Images/oktogo.gif", "Logo", "Home", null)
                     </p>
                 </div>
                 <div class="float-right">
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "User")</li>
+                            <li>@Html.RouteLink("Home", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "User")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "User")</li>
                         </ul>

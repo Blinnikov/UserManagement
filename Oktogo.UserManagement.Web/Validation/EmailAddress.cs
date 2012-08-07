@@ -7,7 +7,7 @@ namespace Oktogo.UserManagement.Web.Validation
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false)]
     public class EmailAddressAttribute : RegularExpressionAttribute
     {
-        private const string EmailPattern = @"^\w+([-+.]*[\w-]+)*@(\w+([-.]?\w+)){1,}\.\w{2,4}$";
+        private const string EmailPattern = @"^\w+([-+.]*[\w-]+)*@(\w+([-.]?\w+)){1,}\.\w{2,6}$";
 
         static EmailAddressAttribute()
         {

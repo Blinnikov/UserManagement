@@ -51,7 +51,7 @@ namespace Oktogo.UserManagement.Web.UserManagementService {
         [System.Runtime.Serialization.DataMemberAttribute()]
         [Display(Name = "E-mail")]
         [Required]
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "The E-mail has incorrect format")]
         public string Email {
             get {
                 return this.EmailField;
